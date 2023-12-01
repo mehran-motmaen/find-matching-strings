@@ -12,22 +12,27 @@ This is a Python application for matching strings using the StringMatcher class.
 
 ```bash
 docker build -t string-matcher-app .
+```
 
+### Run Tests
 
-Run Tests
-
+```bash
 docker run string-matcher-app
+```
 
+### Run the Application
 
-Run the Application
 If you want to run the StringMatcher application:
 
+```bash
 docker run string-matcher-app python src/main.py
+```
 
+### Configuration
 
-Configuration
 You can configure the input strings for testing by modifying the string_list in tests/test.py.
 
-Contributing
-Feel free to contribute by submitting issues or pull requests.
+### Contributing
 
+Contributions are welcome! Feel free to submit issues or pull requests to enhance the StringMatcher App. Your feedback
+and collaboration are appreciated.
