@@ -1,6 +1,7 @@
 import unittest
 from src.main import StringMatcher
 
+
 class TestStringListMatcher(unittest.TestCase):
     """
     Test cases for the StringMatcher class.

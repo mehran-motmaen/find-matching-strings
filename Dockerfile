@@ -1,22 +1,17 @@
-# Use an official Python runtime as a parent image
 FROM python:3.13.0a2-alpine3.18
 
-# Set the working directory to /app
+LABEL maintainer="Merhan Motmaen <motmaen73@gmail.com>"
+
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+COPY requirements.txt .
 
-# Install any needed packages specified in requirements.txt
-# (This step may not be necessary for your specific application)
-# RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 80 available to the world outside this container
-# (Modify this if your application listens on a different port)
-EXPOSE 80
+# Copy the rest of the application code into the container
+COPY . .
 
-# Define environment variable
-ENV NAME StringMatcherApp
+ENV APP_NAME=StringMatcherApp
 
-# Run app.py when the container launches
-CMD ["python", "main.py"]
+# Run tests when the container launches
+CMD ["python", "-m", "unittest", "tests/test.py"]

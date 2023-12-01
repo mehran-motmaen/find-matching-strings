@@ -31,4 +31,3 @@ class StringMatcher:
                     matching_strings.append(string)
 
         return matching_strings
-
